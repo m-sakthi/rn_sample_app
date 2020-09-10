@@ -14,7 +14,8 @@ import {
   View,
   Text,
   StatusBar,
-  Linking
+  Linking,
+  TouchableOpacity
 } from 'react-native';
 
 import {
@@ -26,6 +27,10 @@ import {
 } from 'react-native/Libraries/NewAppScreen';
 
 const App = () => {
+  const sampleFn = () => {
+    console.log();
+  }
+
   return (
     <>
       <StatusBar barStyle="dark-content" />
@@ -34,11 +39,6 @@ const App = () => {
           contentInsetAdjustmentBehavior="automatic"
           style={styles.scrollView}>
           <Header />
-          {global.HermesInternal == null ? null : (
-            <View style={styles.engine}>
-              <Text style={styles.footer}>Engine: Hermes</Text>
-            </View>
-          )}
           <View style={styles.body}>
             <View style={styles.sectionContainer}>
               <Text style={styles.sectionTitle}>Step One</Text>
@@ -46,14 +46,21 @@ const App = () => {
                 Edit <Text style={styles.highlight}>App.js</Text> to change this
                 screen and then come back to see your edits.
               </Text>
-
             </View>
             <View style={[styles.sectionContainer,]}>
-              <Text>someg asdfsadf asf sdf 
-                <Text onPress={() => {Linking.openURL("https://google.com")}}>
+              <Text>someg asdfsadf asf sdf
+                <Text
+                  testID="app-google-link"
+                  // onPress={() => { Linking.openURL("https://google.com") }}
+                  onPress={sampleFn}
+                >
                   someLink1
                 </Text>
               </Text>
+
+              <TouchableOpacity testID="app-sample-btn" onPress={sampleFn}>
+                <View><Text>Sample button</Text></View>
+              </TouchableOpacity>
 
             </View>
             {/* <View style={styles.sectionContainer}>
