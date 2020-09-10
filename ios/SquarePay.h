@@ -5,8 +5,15 @@
 //  Created by 1260081 on 29/08/20.
 //
 
-#ifndef SquarePay_h
-#define SquarePay_h
 
+#import <Foundation/Foundation.h>
+#import <React/RCTBridgeModule.h>
+#import <SquarePointOfSaleSDK.h>
 
-#endif /* SquarePay_h */
+NS_ASSUME_NONNULL_BEGIN
+
+@interface SquarePay : NSObject <RCTBridgeModule>
+
+@end
+
+NS_ASSUME_NONNULL_END

@@ -19,6 +19,8 @@
 		2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		2DCD954D1E0B4F2C00145EB5 /* TxtSampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* TxtSampleTests.m */; };
+		94413C6E24FA284B007F9EFF /* SquarePay.m in Sources */ = {isa = PBXBuildFile; fileRef = 94413C6D24FA284B007F9EFF /* SquarePay.m */; };
+		94413C7124FA2A58007F9EFF /* CalendarManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 94413C7024FA2A58007F9EFF /* CalendarManager.m */; };
 		C2CDBD516BD71B23376CA1C8 /* libPods-TxtSample-TxtSampleTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 461395F25D349A2AD21F9304 /* libPods-TxtSample-TxtSampleTests.a */; };
 /* End PBXBuildFile section */
 
@@ -57,6 +59,10 @@
 		461395F25D349A2AD21F9304 /* libPods-TxtSample-TxtSampleTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TxtSample-TxtSampleTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5438444FEF1A1A633C78C7AC /* Pods-TxtSample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TxtSample.release.xcconfig"; path = "Target Support Files/Pods-TxtSample/Pods-TxtSample.release.xcconfig"; sourceTree = "<group>"; };
 		80FC07C36073FC1C80514657 /* Pods-TxtSample-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TxtSample-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-TxtSample-tvOS/Pods-TxtSample-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
+		94413C6C24FA27F1007F9EFF /* SquarePay.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SquarePay.h; sourceTree = "<group>"; };
+		94413C6D24FA284B007F9EFF /* SquarePay.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SquarePay.m; sourceTree = "<group>"; };
+		94413C6F24FA2A0A007F9EFF /* CalendarManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CalendarManager.h; sourceTree = "<group>"; };
+		94413C7024FA2A58007F9EFF /* CalendarManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CalendarManager.m; sourceTree = "<group>"; };
 		A1AEED87BD5339E22C1839AD /* libPods-TxtSample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TxtSample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8E2F28F6D547B45A22B2923 /* Pods-TxtSample-TxtSampleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TxtSample-TxtSampleTests.release.xcconfig"; path = "Target Support Files/Pods-TxtSample-TxtSampleTests/Pods-TxtSample-TxtSampleTests.release.xcconfig"; sourceTree = "<group>"; };
 		ADB94E789D08E4F392375C30 /* Pods-TxtSample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TxtSample.debug.xcconfig"; path = "Target Support Files/Pods-TxtSample/Pods-TxtSample.debug.xcconfig"; sourceTree = "<group>"; };
@@ -134,7 +140,6 @@
 				CAD41D6A83C2F63BC1F2745F /* Pods-TxtSample-tvOSTests.debug.xcconfig */,
 				B845313E4F159B7C9EBAB094 /* Pods-TxtSample-tvOSTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -142,12 +147,16 @@
 			isa = PBXGroup;
 			children = (
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
+				94413C6C24FA27F1007F9EFF /* SquarePay.h */,
+				94413C6D24FA284B007F9EFF /* SquarePay.m */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				13B07FB11A68108700A75B9A /* LaunchScreen.xib */,
 				13B07FB71A68108700A75B9A /* main.m */,
+				94413C6F24FA2A0A007F9EFF /* CalendarManager.h */,
+				94413C7024FA2A58007F9EFF /* CalendarManager.m */,
 			);
 			name = TxtSample;
 			sourceTree = "<group>";
@@ -531,7 +540,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
+				94413C7124FA2A58007F9EFF /* CalendarManager.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
+				94413C6E24FA284B007F9EFF /* SquarePay.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

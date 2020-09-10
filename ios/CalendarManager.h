@@ -5,8 +5,11 @@
 //  Created by 1260081 on 29/08/20.
 //
 
-#ifndef CalendarManager_h
-#define CalendarManager_h
+#import <React/RCTBridgeModule.h>
+#import <React/RCTEventEmitter.h>
 
+@interface CalendarManager : RCTEventEmitter <RCTBridgeModule>
 
-#endif /* CalendarManager_h */
+- (void)calendarEventReminderReceived:(NSDictionary *)userInfo;
+
+@end
