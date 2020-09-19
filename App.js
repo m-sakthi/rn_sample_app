@@ -15,7 +15,9 @@ import {
   Text,
   StatusBar,
   Linking,
-  TouchableOpacity
+  TouchableOpacity,
+  NativeModules,
+  NativeEventEmitter
 } from 'react-native';
 
 import {
@@ -26,10 +28,14 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
+const { MainActivity } = NativeModules;
+
 const App = () => {
   const sampleFn = () => {
     console.log();
   }
+
+  const launchSquarePay = () => MainActivity.startTransaction();
 
   return (
     <>
@@ -63,13 +69,13 @@ const App = () => {
               </TouchableOpacity>
 
             </View>
-            {/* <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>See Your Changes</Text>
-              <Text style={styles.sectionDescription}>
-                <ReloadInstructions />
-              </Text>
-            </View>
             <View style={styles.sectionContainer}>
+              <Text style={styles.sectionTitle}>See Your Changes</Text>
+              <TouchableOpacity testID="app-sample-btn" onPress={sampleFn}>
+                <View><Text>Launch Square Pay</Text></View>
+              </TouchableOpacity>
+            </View>
+            {/*<View style={styles.sectionContainer}>
               <Text style={styles.sectionTitle}>Debug</Text>
               <Text style={styles.sectionDescription}>
                 <DebugInstructions />

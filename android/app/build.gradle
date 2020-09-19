@@ -213,6 +213,10 @@ dependencies {
     } else {
         implementation jscFlavor
     }
+
+    implementation 'com.android.support:appcompat-v7:28.0.3'
+
+    implementation 'com.squareup.sdk:point-of-sale-sdk:2.+'
 }
 
 // Run this once to be able to run the application with BUCK

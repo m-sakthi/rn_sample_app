@@ -149,14 +149,14 @@
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				94413C6C24FA27F1007F9EFF /* SquarePay.h */,
 				94413C6D24FA284B007F9EFF /* SquarePay.m */,
+				94413C6F24FA2A0A007F9EFF /* CalendarManager.h */,
+				94413C7024FA2A58007F9EFF /* CalendarManager.m */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				13B07FB11A68108700A75B9A /* LaunchScreen.xib */,
 				13B07FB71A68108700A75B9A /* main.m */,
-				94413C6F24FA2A0A007F9EFF /* CalendarManager.h */,
-				94413C7024FA2A58007F9EFF /* CalendarManager.m */,
 			);
 			name = TxtSample;
 			sourceTree = "<group>";
