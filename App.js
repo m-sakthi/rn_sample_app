@@ -28,14 +28,16 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
-const { MainActivity } = NativeModules;
+import ToastExample from './ToastExample';
+
+// const ToastExample = NativeModules.ToastExample;
 
 const App = () => {
   const sampleFn = () => {
     console.log();
   }
 
-  const launchSquarePay = () => MainActivity.startTransaction();
+  const launchSquarePay = () => ToastExample.show('Awesome', ToastExample.SHORT);;
 
   return (
     <>
@@ -71,7 +73,7 @@ const App = () => {
             </View>
             <View style={styles.sectionContainer}>
               <Text style={styles.sectionTitle}>See Your Changes</Text>
-              <TouchableOpacity testID="app-sample-btn" onPress={sampleFn}>
+              <TouchableOpacity testID="app-sample-btn" onPress={launchSquarePay}>
                 <View><Text>Launch Square Pay</Text></View>
               </TouchableOpacity>
             </View>

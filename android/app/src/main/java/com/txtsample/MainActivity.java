@@ -8,6 +8,9 @@ import android.content.Intent;
 
 //import com.facebook.react.bridge.Arguments;
 //import com.facebook.react.bridge.WritableMap;
+import androidx.annotation.NonNull;
+
+import com.facebook.react.bridge.NativeModule;
 import com.facebook.react.modules.core.DeviceEventManagerModule;
 import com.squareup.sdk.pos.PosClient;
 import com.squareup.sdk.pos.ChargeRequest;
@@ -15,7 +18,7 @@ import com.squareup.sdk.pos.PosSdk;
 import com.squareup.sdk.pos.CurrencyCode;
 
 
-public class MainActivity extends ReactActivity {
+public class MainActivity extends ReactActivity implements NativeModule {
 
   /**
    * Returns the name of the main component registered from JavaScript. This is used to schedule
@@ -37,25 +40,25 @@ public class MainActivity extends ReactActivity {
   }
 
 
-  private static final int CHARGE_REQUEST_CODE = 1;
-  public void startTransaction() {
-    ChargeRequest request = new ChargeRequest.Builder(
-    100,
-    CurrencyCode.USD)
-    .build();
-    try {
-      Intent intent = posClient.createChargeIntent(request);
-      startActivityForResult(intent, CHARGE_REQUEST_CODE);
+   private static final int CHARGE_REQUEST_CODE = 1;
+   public void startTransaction() {
+     ChargeRequest request = new ChargeRequest.Builder(
+     100,
+     CurrencyCode.USD)
+     .build();
+     try {
+       Intent intent = posClient.createChargeIntent(request);
+       startActivityForResult(intent, CHARGE_REQUEST_CODE);
 
-    } catch (ActivityNotFoundException e) {
-//      AlertDialogHelper.showDialog(
-//          this,
-//          "Error",
-//          "Square Point of Sale is not installed"
-//          );
-      posClient.openPointOfSalePlayStoreListing();
-    }
-  }
+     } catch (ActivityNotFoundException e) {
+ //      AlertDialogHelper.showDialog(
+ //          this,
+ //          "Error",
+ //          "Square Point of Sale is not installed"
+ //          );
+       posClient.openPointOfSalePlayStoreListing();
+     }
+   }
 
   @Override public void onActivityResult(int requestCode, int resultCode, Intent data) {
     super.onActivityResult(requestCode, resultCode, data);
@@ -73,7 +76,7 @@ public class MainActivity extends ReactActivity {
       ChargeRequest.Success success = posClient.parseChargeSuccess(data);
 //      AlertDialogHelper.showDialog(this,
 //          "Success",
-//          "Client transaction ID: "
+//          "Client transaction ID: "s
 //              + success.clientTransactionId);
 
 //      WritableMap params = Arguments.createMap(); // add here the data you want to send
@@ -95,4 +98,24 @@ public class MainActivity extends ReactActivity {
     return;
   }
 
+  @NonNull
+  @Override
+  public String getName() {
+    return null;
+  }
+
+  @Override
+  public void initialize() {
+
+  }
+
+  @Override
+  public boolean canOverrideExistingModule() {
+    return false;
+  }
+
+  @Override
+  public void onCatalystInstanceDestroy() {
+
+  }
 }
